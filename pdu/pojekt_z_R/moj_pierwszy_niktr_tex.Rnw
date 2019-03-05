@@ -1,0 +1,17 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\begin{document}
+
+\title{Cos}
+\maketitle
+<<>>=
+x <- 7:9
+print(x)
+@
+
+
+\end{document}
