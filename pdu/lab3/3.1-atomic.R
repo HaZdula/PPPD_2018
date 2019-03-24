@@ -1,11 +1,12 @@
 set.seed(123)
 
+#3.1
 x <- round(rnorm(20,0,1),2)
 
 print(x)
 
 x[ (x >= -1 & x <= -1) | (x >= 1 & x<=2)]
-
+x
 
 ?length
 ?sum
@@ -51,6 +52,75 @@ y
 y <- floor(x) + 1/2
 y
 
+#3.2
+
+x <- rnorm(20,0,1)
+y <- 10*x +2
+
+x <- rnorm(20,0,1)
+
+
+korelacja_r <- function(x,y) {
+  
+  sdx <- sd(x)
+  sdy <- sd(y)
+  
+  sum(((x-mean(x))/sdx * (y - mean(y))/sdy))/(length(x) -1)
+  
+}
+
+korelacja_r(x,y)
+
+#3.3
+
+x <- runif(20,0,10)
+y <- runif(20,0,10)
+
+korealcjaSpearmana <- function(x,y){
+  
+  1 - (6*sum((rank(x) - rank(y))**2))/(length(x) * (length(x)**2 - 1))
+  
+}
+
+korealcjaSpearmana(x,x)
+
+
+#3.4
+
+x <- runif(21)
+
+srednia_k_win <- function(x,k){
+  stopifnot(length(x)%%2 != 0)
+  stopifnot(2*k <= length(x) - 1)
+  
+  #jak to zrobić???
+  
+}
+
+#3.5
+y <- sort(runif(20,0,10))
+yy <- mean(y)
+
+wspol_giniego <- function(x){
+  
+  y <- c(1:length(x))
+  
+  
+  sum((2*y - length(x) - 1)*x)/((length(x)*(length(x) -1)*mean(y)))
+}
+
+wspol_giniego(y)
+
+
+#3.6
+
+factorial2 <- function(n){
+  
+  cumprod(c(1:n))[n]
+}
+  
+factorial2(4)
+  
 #3.7
 asinmoj <- function(x,m){
   stopifnot(m > 0, length(m) == 1, abs(x) < 1)
@@ -110,3 +180,7 @@ cyferki(c(4,2,1))
 
 
 #3.8
+
+
+
+
